@@ -17,12 +17,12 @@
   "dependencies": {
     "axios": "^0.18.0",
     "browser-window": "^0.4.0",
-    "electron": "^1.8.2",
     "electron-updater": "^2.21.0"
   },
   "devDependencies": {
     "electron-builder": "^20.2.1",
     "electron-packager": "^11.0.1",
+    "electron": "^1.8.2",
     "electron-winstaller": "^2.6.4",
     "nexe": "^2.0.0-rc.26"
   }

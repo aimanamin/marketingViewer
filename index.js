@@ -68,7 +68,10 @@ function createWindow () {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', () => {
+  createWindow();
+  autoUpdater.checkForUpdates();
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
@@ -113,7 +116,7 @@ server.on('message', (message, remote) => {
     if (changed){
       changed = false;
       win.loadURL(SERVER_URL+"producto/"+message);
-      setTimeout(changeURL, 10000);
+      setTimeout(changeURL, 30000);
     }
 });
 server.bind(PORT, HOST);
