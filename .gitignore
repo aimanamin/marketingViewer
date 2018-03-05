@@ -2,3 +2,4 @@ node_modules/
 *-lock.json
 release-builds/
 electron-builder.yml
+dist/
