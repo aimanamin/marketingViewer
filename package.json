@@ -1,6 +1,6 @@
 {
   "name": "marketingviewer",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Marketing Viewer for secondary monitors",
   "main": "index.js",
   "repository": "https://github.com/aimanamin/marketingViewer.git",
