@@ -1,10 +1,8 @@
 const electron = require('electron');
 const dgram = require('dgram');
-const {autoUpdater} = require("electron-updater");
 
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
-const ipcMain = electron.ipcMain;
 
 const SERVER_URL = 'http://192.168.100.21/';
 // const SERVER_URL = "http://192.168.1.23:5000/"
@@ -70,7 +68,6 @@ function createWindow () {
 // Some APIs can only be used after this event occurs.
 app.on('ready', () => {
   createWindow();
-  autoUpdater.checkForUpdates();
 });
 
 // Quit when all windows are closed.
@@ -90,16 +87,6 @@ app.on('activate', () => {
   }
 })
 
-
-//autoupdater
-autoUpdater.on('update-downloaded', (info) => {
-  win.webContents.send('updateReady')
-});
-
-// when receiving a quitAndInstall signal, quit and install the new version ;)
-ipcMain.on("quitAndInstall", (event, arg) => {
-  autoUpdater.quitAndInstall();
-})
 
 //listen udp server
 server.on('listening', () => {
